@@ -1,0 +1,28 @@
+{
+  "name": "com.anglerd.danmaku2d",
+  "version": "0.1.0",
+  "displayName": "Danmaku 2D",
+  "description": "A package for developing 2D STG",
+  "keywords": [
+    "2d",
+    "danmaku",
+    "touhou"
+  ],
+  "author": {
+    "name": "AngleRD",
+    "email": "ttyfly@126.com"
+  },
+  "dependencies": {
+    "com.github.siccity.xnode": "1.8.0"
+  },
+  "scopedRegistries": [
+    {
+      "name": "package.openupm.com",
+      "url": "https://package.openupm.com",
+      "scopes": [
+        "com.github.siccity.xnode",
+        "com.openupm"
+      ]
+    }
+  ]
+}

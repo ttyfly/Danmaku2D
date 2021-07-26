@@ -1,0 +1,20 @@
+{
+    "name": "AngleRD.Danmaku2D.Editor",
+    "rootNamespace": "AngleRD.Danmaku2D.Editor",
+    "references": [
+        "AngleRD.Danmaku2D.Runtime",
+        "XNode",
+        "XNodeEditor"
+    ],
+    "includePlatforms": [
+        "Editor"
+    ],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}
