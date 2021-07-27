@@ -7,7 +7,7 @@ namespace AngleRD.Danmaku2D.Runtime {
     /// 发射器类。一个发射器仅发射一种类型的子弹。
     /// </summary>
     [Serializable]
-    public class Emitter {
+    public struct Emitter {
 
         /// <summary>
         /// 发射端口。

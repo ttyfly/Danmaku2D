@@ -7,7 +7,7 @@ namespace AngleRD.Danmaku2D.Runtime {
     /// 发射端口类。
     /// </summary>
     [Serializable]
-    public class EmitterPort {
+    public struct EmitterPort {
 
         /// <summary>
         /// 发射端口的相对位置。

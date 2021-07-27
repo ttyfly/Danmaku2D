@@ -7,16 +7,18 @@ using XNode;
 namespace AngleRD.Danmaku2D.Runtime {
 
     [CreateNodeMenu("")]
-    public class OutputNode<T> : Node {
+    public class InputNode<T> : Node {
 
-        [Output] [HideInInspector] public T output;
+        [Output(typeConstraint = TypeConstraint.Inherited)] public T output;
+
+        protected T input;
 
         public override object GetValue(NodePort port) {
-            return GetOutput();
+            return input;
         }
 
-        public virtual T GetOutput() {
-            return default(T);
+        public void SetInput(T inputValue) {
+            input = inputValue;
         }
     }
 }

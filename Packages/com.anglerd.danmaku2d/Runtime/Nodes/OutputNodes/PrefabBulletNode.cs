@@ -13,11 +13,11 @@ namespace AngleRD.Danmaku2D.Runtime {
         [Input(typeConstraint = TypeConstraint.Strict)] public float rotation;
         [Input(typeConstraint = TypeConstraint.Strict)] public Emitter attachedEmitters;
 
-        protected override void Process() {
-            output.velocity = GetInputValue<Vector2>("velocity", this.velocity);
-            output.rotation = GetInputValue<float>("rotation", this.rotation);
-            output.attachedEmitters = GetInputValues<Emitter>("attachedEmitters", this.attachedEmitters);
-        }
+        public override PrefabBullet GetOutput() => new PrefabBullet {
+            velocity = GetInputValue<Vector2>("velocity", this.velocity),
+            rotation = GetInputValue<float>("rotation", this.rotation),
+            attachedEmitters = GetInputValues<Emitter>("attachedEmitters"),
+        };
     }
 
 }

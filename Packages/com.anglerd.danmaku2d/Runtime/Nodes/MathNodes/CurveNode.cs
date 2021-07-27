@@ -1,19 +1,19 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using System.Linq;
+using XNode;
 
 namespace AngleRD.Danmaku2D.Runtime {
 
     [CreateNodeMenu("Danmaku 2D/Math/Curve")]
-    public class CurveNode : ProcessingNode<float> {
+    public class CurveNode : Node {
 
         [Input(typeConstraint = TypeConstraint.Strict)] public float input;
         public AnimationCurve curve;
 
-        protected override void Process() {
+        [Output(typeConstraint = TypeConstraint.Strict)] public float output;
+
+        public override object GetValue(NodePort port) {
             float input = GetInputValue<float>("input", this.input);
-            output = curve.Evaluate(input);
+            return curve.Evaluate(input);
         }
     }
 }

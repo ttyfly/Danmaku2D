@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!114 &-4021177710298336237
+--- !u!114 &-4064359283600119510
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -9,49 +9,57 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dbedec5df594f13439e43092262c6560, type: 3}
-  m_Name: Particle Bullet
+  m_Script: {fileID: 11500000, guid: cbc2690263a6ac44f9079933e4a7689d, type: 3}
+  m_Name: Float Math
   m_EditorClassIdentifier: 
   graph: {fileID: 11400000}
-  position: {x: 328, y: -24}
+  position: {x: -296, y: -152}
   ports:
     keys:
-    - velocity
-    - rotation
+    - a
+    - b
     - output
     values:
-    - _fieldName: velocity
-      _node: {fileID: -4021177710298336237}
-      _typeQualifiedName: UnityEngine.Vector2, UnityEngine.CoreModule, Version=0.0.0.0,
-        Culture=neutral, PublicKeyToken=null
-      connections: []
+    - _fieldName: a
+      _node: {fileID: -4064359283600119510}
+      _typeQualifiedName: System.Single, mscorlib, Version=4.0.0.0, Culture=neutral,
+        PublicKeyToken=b77a5c561934e089
+      connections:
+      - fieldName: output
+        node: {fileID: 4152112506405758509}
+        reroutePoints: []
       _direction: 0
       _connectionType: 0
       _typeConstraint: 2
       _dynamic: 0
-    - _fieldName: rotation
-      _node: {fileID: -4021177710298336237}
+    - _fieldName: b
+      _node: {fileID: -4064359283600119510}
       _typeQualifiedName: System.Single, mscorlib, Version=4.0.0.0, Culture=neutral,
         PublicKeyToken=b77a5c561934e089
-      connections: []
+      connections:
+      - fieldName: output
+        node: {fileID: 2510130902002443676}
+        reroutePoints: []
       _direction: 0
       _connectionType: 0
       _typeConstraint: 2
       _dynamic: 0
     - _fieldName: output
-      _node: {fileID: -4021177710298336237}
-      _typeQualifiedName: AngleRD.Danmaku2D.Runtime.ParticleBullet, AngleRD.Danmaku2D.Runtime,
-        Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
-      connections: []
+      _node: {fileID: -4064359283600119510}
+      _typeQualifiedName: System.Single, mscorlib, Version=4.0.0.0, Culture=neutral,
+        PublicKeyToken=b77a5c561934e089
+      connections:
+      - fieldName: input
+        node: {fileID: 5968172846965079629}
+        reroutePoints: []
       _direction: 1
       _connectionType: 0
-      _typeConstraint: 0
+      _typeConstraint: 2
       _dynamic: 0
-  output:
-    velocity: {x: 0, y: 0}
-    rotation: 0
-  velocity: {x: 1, y: 0}
-  rotation: 0
+  a: 0
+  b: 0
+  mathType: 0
+  output: 0
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -65,5 +73,349 @@ MonoBehaviour:
   m_Name: NewParticleBullet
   m_EditorClassIdentifier: 
   nodes:
-  - {fileID: -4021177710298336237}
-  outputNode: {fileID: -4021177710298336237}
+  - {fileID: 3741205555600986257}
+  - {fileID: 1765802643019072156}
+  - {fileID: 6217577458174510769}
+  - {fileID: 4152112506405758509}
+  - {fileID: 5968172846965079629}
+  - {fileID: 2510130902002443676}
+  - {fileID: -4064359283600119510}
+  outputNode: {fileID: 3741205555600986257}
+  progressNode: {fileID: 4152112506405758509}
+  hasInput: 1
+  customDataNode: {fileID: 0}
+  hasCustomData: 0
+  emitCountNode: {fileID: 1765802643019072156}
+  hasEmitCountNode: 1
+--- !u!114 &1765802643019072156
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d5ac3ef055566ad41b84878a662fd91d, type: 3}
+  m_Name: Emit Count
+  m_EditorClassIdentifier: 
+  graph: {fileID: 11400000}
+  position: {x: -552, y: -24}
+  ports:
+    keys:
+    - output
+    values:
+    - _fieldName: output
+      _node: {fileID: 1765802643019072156}
+      _typeQualifiedName: System.Single, mscorlib, Version=4.0.0.0, Culture=neutral,
+        PublicKeyToken=b77a5c561934e089
+      connections:
+      - fieldName: a
+        node: {fileID: 2510130902002443676}
+        reroutePoints: []
+      _direction: 1
+      _connectionType: 0
+      _typeConstraint: 1
+      _dynamic: 0
+  output: 0
+--- !u!114 &2510130902002443676
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cbc2690263a6ac44f9079933e4a7689d, type: 3}
+  m_Name: Float Math
+  m_EditorClassIdentifier: 
+  graph: {fileID: 11400000}
+  position: {x: -344, y: 40}
+  ports:
+    keys:
+    - a
+    - b
+    - output
+    values:
+    - _fieldName: a
+      _node: {fileID: 2510130902002443676}
+      _typeQualifiedName: System.Single, mscorlib, Version=4.0.0.0, Culture=neutral,
+        PublicKeyToken=b77a5c561934e089
+      connections:
+      - fieldName: output
+        node: {fileID: 1765802643019072156}
+        reroutePoints: []
+      _direction: 0
+      _connectionType: 0
+      _typeConstraint: 2
+      _dynamic: 0
+    - _fieldName: b
+      _node: {fileID: 2510130902002443676}
+      _typeQualifiedName: System.Single, mscorlib, Version=4.0.0.0, Culture=neutral,
+        PublicKeyToken=b77a5c561934e089
+      connections: []
+      _direction: 0
+      _connectionType: 0
+      _typeConstraint: 2
+      _dynamic: 0
+    - _fieldName: output
+      _node: {fileID: 2510130902002443676}
+      _typeQualifiedName: System.Single, mscorlib, Version=4.0.0.0, Culture=neutral,
+        PublicKeyToken=b77a5c561934e089
+      connections:
+      - fieldName: b
+        node: {fileID: -4064359283600119510}
+        reroutePoints: []
+      _direction: 1
+      _connectionType: 0
+      _typeConstraint: 2
+      _dynamic: 0
+  a: 0
+  b: 60
+  mathType: 3
+  output: 0
+--- !u!114 &3741205555600986257
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dbedec5df594f13439e43092262c6560, type: 3}
+  m_Name: Particle Bullet
+  m_EditorClassIdentifier: 
+  graph: {fileID: 11400000}
+  position: {x: 392, y: -72}
+  ports:
+    keys:
+    - velocity
+    - rotation
+    - customData
+    - output
+    values:
+    - _fieldName: velocity
+      _node: {fileID: 3741205555600986257}
+      _typeQualifiedName: UnityEngine.Vector2, UnityEngine.CoreModule, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+      connections:
+      - fieldName: output
+        node: {fileID: 6217577458174510769}
+        reroutePoints: []
+      _direction: 0
+      _connectionType: 0
+      _typeConstraint: 2
+      _dynamic: 0
+    - _fieldName: rotation
+      _node: {fileID: 3741205555600986257}
+      _typeQualifiedName: System.Single, mscorlib, Version=4.0.0.0, Culture=neutral,
+        PublicKeyToken=b77a5c561934e089
+      connections: []
+      _direction: 0
+      _connectionType: 0
+      _typeConstraint: 2
+      _dynamic: 0
+    - _fieldName: customData
+      _node: {fileID: 3741205555600986257}
+      _typeQualifiedName: AngleRD.Danmaku2D.Runtime.BulletCustomData, AngleRD.Danmaku2D.Runtime,
+        Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+      connections: []
+      _direction: 0
+      _connectionType: 0
+      _typeConstraint: 2
+      _dynamic: 0
+    - _fieldName: output
+      _node: {fileID: 3741205555600986257}
+      _typeQualifiedName: AngleRD.Danmaku2D.Runtime.ParticleBullet, AngleRD.Danmaku2D.Runtime,
+        Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+      connections: []
+      _direction: 1
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+  output:
+    velocity: {x: 0, y: 0}
+    rotation: 0
+    customData:
+      vector1: {x: 0, y: 0}
+      vector2: {x: 0, y: 0}
+      float1: 0
+      float2: 0
+      float3: 0
+      float4: 0
+  velocity: {x: 0, y: 0}
+  rotation: 0
+  customData:
+    vector1: {x: 0, y: 0}
+    vector2: {x: 0, y: 0}
+    float1: 0
+    float2: 0
+    float3: 0
+    float4: 0
+--- !u!114 &4152112506405758509
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7cd3039b4adc69d43839937897edecd8, type: 3}
+  m_Name: Progress
+  m_EditorClassIdentifier: 
+  graph: {fileID: 11400000}
+  position: {x: -584, y: -152}
+  ports:
+    keys:
+    - output
+    values:
+    - _fieldName: output
+      _node: {fileID: 4152112506405758509}
+      _typeQualifiedName: System.Single, mscorlib, Version=4.0.0.0, Culture=neutral,
+        PublicKeyToken=b77a5c561934e089
+      connections:
+      - fieldName: a
+        node: {fileID: -4064359283600119510}
+        reroutePoints: []
+      _direction: 1
+      _connectionType: 0
+      _typeConstraint: 1
+      _dynamic: 0
+  output: 0
+--- !u!114 &5968172846965079629
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c226289c23068134cba52eadafe774d7, type: 3}
+  m_Name: Curve
+  m_EditorClassIdentifier: 
+  graph: {fileID: 11400000}
+  position: {x: -72, y: -168}
+  ports:
+    keys:
+    - input
+    - output
+    values:
+    - _fieldName: input
+      _node: {fileID: 5968172846965079629}
+      _typeQualifiedName: System.Single, mscorlib, Version=4.0.0.0, Culture=neutral,
+        PublicKeyToken=b77a5c561934e089
+      connections:
+      - fieldName: output
+        node: {fileID: -4064359283600119510}
+        reroutePoints: []
+      _direction: 0
+      _connectionType: 0
+      _typeConstraint: 2
+      _dynamic: 0
+    - _fieldName: output
+      _node: {fileID: 5968172846965079629}
+      _typeQualifiedName: System.Single, mscorlib, Version=4.0.0.0, Culture=neutral,
+        PublicKeyToken=b77a5c561934e089
+      connections:
+      - fieldName: x
+        node: {fileID: 6217577458174510769}
+        reroutePoints: []
+      _direction: 1
+      _connectionType: 0
+      _typeConstraint: 2
+      _dynamic: 0
+  input: 0
+  curve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: -3.2617242
+      outSlope: -3.2617242
+      tangentMode: 34
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 0.30538234
+      value: 0.0039270744
+      inSlope: Infinity
+      outSlope: Infinity
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: -0.0012359619
+      inSlope: -0.0074329185
+      outSlope: -0.0074329185
+      tangentMode: 34
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  output: 0
+--- !u!114 &6217577458174510769
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3bbfc09c820feea448d42e0029bff405, type: 3}
+  m_Name: Vector 2
+  m_EditorClassIdentifier: 
+  graph: {fileID: 11400000}
+  position: {x: 184, y: -200}
+  ports:
+    keys:
+    - x
+    - y
+    - output
+    values:
+    - _fieldName: x
+      _node: {fileID: 6217577458174510769}
+      _typeQualifiedName: System.Single, mscorlib, Version=4.0.0.0, Culture=neutral,
+        PublicKeyToken=b77a5c561934e089
+      connections:
+      - fieldName: output
+        node: {fileID: 5968172846965079629}
+        reroutePoints: []
+      _direction: 0
+      _connectionType: 0
+      _typeConstraint: 2
+      _dynamic: 0
+    - _fieldName: y
+      _node: {fileID: 6217577458174510769}
+      _typeQualifiedName: System.Single, mscorlib, Version=4.0.0.0, Culture=neutral,
+        PublicKeyToken=b77a5c561934e089
+      connections: []
+      _direction: 0
+      _connectionType: 0
+      _typeConstraint: 2
+      _dynamic: 0
+    - _fieldName: output
+      _node: {fileID: 6217577458174510769}
+      _typeQualifiedName: UnityEngine.Vector2, UnityEngine.CoreModule, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+      connections:
+      - fieldName: velocity
+        node: {fileID: 3741205555600986257}
+        reroutePoints: []
+      _direction: 1
+      _connectionType: 0
+      _typeConstraint: 2
+      _dynamic: 0
+  x: 0
+  y: 0
+  output: {x: 0, y: 0}
